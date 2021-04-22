@@ -1,3 +1,4 @@
+import 'package:devquiz/home/home_controller.dart';
 import 'package:devquiz/home/widgets/appbar/appbar.dart';
 import 'package:devquiz/home/widgets/level_button/level_button_widfet.dart';
 import 'package:devquiz/home/widgets/quiz_card/quiz_card_widget.dart';
@@ -11,11 +12,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final controller = HomeController();
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
-        appBar: AppBarWidget(),
+        appBar: AppBarWidget(user: controller.user!,),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
@@ -24,16 +26,26 @@ class _HomePageState extends State<HomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(width: 5,),
+                  SizedBox(
+                    width: 5,
+                  ),
                   LevelButtonWidget(label: "Fácil"),
-                  SizedBox(width: 5,),
+                  SizedBox(
+                    width: 5,
+                  ),
                   LevelButtonWidget(label: "Médio"),
-                  SizedBox(width: 5,),
+                  SizedBox(
+                    width: 5,
+                  ),
                   LevelButtonWidget(label: "Difícil"),
-                  SizedBox(width: 5,),
+                  SizedBox(
+                    width: 5,
+                  ),
                   LevelButtonWidget(label: "Perito"),
-                  SizedBox(width: 20,)
-                 ],
+                  SizedBox(
+                    width: 20,
+                  )
+                ],
               ),
               SizedBox(height: 20),
               Expanded(
@@ -42,10 +54,13 @@ class _HomePageState extends State<HomePage> {
                   crossAxisSpacing: 16,
                   mainAxisSpacing: 16,
                   children: [
-                    QuizCardWidget(),QuizCardWidget(),QuizCardWidget(),QuizCardWidget()
+                    QuizCardWidget(),
+                    QuizCardWidget(),
+                    QuizCardWidget(),
+                    QuizCardWidget()
                   ],
                 ),
-              ) 
+              )
             ],
           ),
         ),
