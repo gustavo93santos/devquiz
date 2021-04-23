@@ -19,7 +19,7 @@ class AnswerMoldel {
   factory AnswerMoldel.fromMap(Map<String, dynamic> map) {
     return AnswerMoldel(
       title: map['title'],
-      isRight: map['isRight'],
+      isRight: map['isRight'] ?? false,
     );
   }
 
